@@ -18,6 +18,9 @@ jobs:
           node-version: 12
       - run: npm ci
       - run: npm test
+      - uses: "phips28/gh-action-bump-version@master"
+        with:
+          tag-prefix: ''
   
   publish-npm:
     needs: build
