@@ -2,7 +2,7 @@
   "name": "@iotes/strategy-mqtt",
   "version": "0.0.1",
   "description": "The iotes strategy for connecting to mqtt",
-  "repository": "https://github.com/iotes/strategy-mqtt.git",
+  "repository": "git://github.com/iotes/strategy-mqtt.git",
   "main": "build/index.js",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
@@ -17,8 +17,11 @@
   "dependencies": {
     "mqtt": "^3.0.0"
   },
-  "files": ["build/**/*"],
+  "files": [
+    "build/**/*"
+  ],
   "devDependencies": {
+    "iotes": "^0.1.31",
     "@types/jest": "^25.1.4",
     "@types/node": "^13.7.0",
     "@typescript-eslint/eslint-plugin": "^2.19.0",
