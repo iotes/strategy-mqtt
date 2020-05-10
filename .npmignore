@@ -1,0 +1,9 @@
+.github
+.vscode
+src
+__tests__
+build
+prettier.json
+jest.config.js
+tsconfig.json
+.gitignore
