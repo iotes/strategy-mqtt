@@ -7,6 +7,9 @@ on:
   push:
     branches:
       - master
+    paths-ignore:
+      - 'package.json'
+      - 'CHANGELOG.md'
 
 jobs:
   build:
@@ -21,6 +24,9 @@ jobs:
       - uses: "phips28/gh-action-bump-version@master"
         with:
           tag-prefix: ''
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}
+      - run: cat ./package.json
   
   publish-npm:
     needs: build
