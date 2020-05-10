@@ -25,7 +25,7 @@ jobs:
         with:
           tag-prefix: ''
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}
+          GITHUB_TOKEN: ${{ secrets.MERGE_PROTECTED}}
       - run: cat ./package.json
   
   publish-npm:
