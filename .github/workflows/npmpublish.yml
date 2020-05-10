@@ -23,9 +23,8 @@ jobs:
       - run: npm test
 
   bump-version:
-    name: "Bump Version on master"
+    needs: build
     runs-on: ubuntu-latest
-
     steps:
       - name: "Checkout source code"
         uses: "actions/checkout@v2"
@@ -42,12 +41,12 @@ jobs:
         with:
           tag-prefix: ''
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.MERGE_PROTECTED }}
       - name: "cat package.json"
         run: cat ./package.json
     
   publish-npm:
-    needs: build
+    needs: bump-version
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -62,7 +61,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
   publish-gpr:
-    needs: build
+    needs: bump-version
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
