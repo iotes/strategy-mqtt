@@ -1,7 +1,7 @@
 # This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
 # For more information see: https://help.github.com/actions/language-and-framework-guides/publishing-nodejs-packages
 
-name: Publish to Github Packages and NPM
+name: Build
 
 on:
   push:
@@ -58,7 +58,7 @@ jobs:
           node-version: 12
           registry-url: https://registry.npmjs.org/
           scope: iotes
-      - run: npm ci --only=production
+      - run: npm ci
       - run: npm run build
       - run: npm publish --access public
         env:
@@ -75,7 +75,7 @@ jobs:
         with:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
-      - run: npm ci --only=production
+      - run: npm ci
       - run: npm run build
       - run: npm publish
         env:
