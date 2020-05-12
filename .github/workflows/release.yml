@@ -76,8 +76,8 @@ jobs:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
           scope: iotes
-      - run: npm ci
+      - run: npm ci --registry https://registry.npmjs.org/
       - run: npm run build
       - run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{secrets.IOTES_STRATEGY_MQTT}}
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
