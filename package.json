@@ -1,13 +1,13 @@
 {
   "name": "@iotes/strategy-mqtt",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "The iotes strategy for connecting to MQTT",
   "repository": "git://github.com/iotes/strategy-mqtt.git",
   "homepage": "https://iotes.dev",
   "main": "build/index.js",
   "private": false,
-  "publishConfig":{
-    "registry":"https://npm.pkg.github.com/"
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   },
   "scripts": {
     "build": "tsc",
