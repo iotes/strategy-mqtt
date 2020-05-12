@@ -56,7 +56,7 @@ jobs:
         with:
           ref: ${{ github.ref }}
       - uses: actions/setup-node@v1
-        - with:
+        with:
           node-version: 12
           registry-url: https://registry.npmjs.org/
           scope: iotes
@@ -78,7 +78,6 @@ jobs:
         with:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
-          scope: iotes
       - uses: actions/download-artifact@v1
         with:
           name: build
