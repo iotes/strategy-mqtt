@@ -6,7 +6,7 @@ import {
   Iotes,
   ClientConfig,
   createHostDispatchable,
-} from 'iotes'
+} from '@iotes/core'
 import { DeviceTypes, StrategyConfig } from './types'
 
 export const createDeviceFactory = (
