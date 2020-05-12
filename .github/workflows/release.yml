@@ -22,6 +22,10 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: npm run build
+      - uses: actions/upload-artifact@v1
+        with:
+          name: build
+          path: build
 
   bump-version:
     needs: build
@@ -41,8 +45,6 @@ jobs:
         uses: "phips28/gh-action-bump-version@master"
         with:
           tag-prefix: ''
-        env:
-          GITHUB_TOKEN: ${{ secrets.MERGE_PROTECTED }}
       - name: "cat package.json"
         run: cat ./package.json
     
@@ -54,12 +56,13 @@ jobs:
         with:
           ref: ${{ github.ref }}
       - uses: actions/setup-node@v1
-        with:
+        - with:
           node-version: 12
           registry-url: https://registry.npmjs.org/
           scope: iotes
-      - run: npm ci
-      - run: npm run build
+      - uses: actions/download-artifact@v1
+        with:
+          name: build
       - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
@@ -76,10 +79,9 @@ jobs:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
           scope: iotes
-      - run: npm config set registry https://registry.npmjs.org/
-      - run: npm ci
-      - run: npm config set registry https://npm.pkg.github.com/
-      - run: npm run build
+      - uses: actions/download-artifact@v1
+        with:
+          name: build
       - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
