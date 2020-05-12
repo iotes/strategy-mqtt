@@ -1,5 +1,5 @@
 import mqtt from 'mqtt'
-import { createIotes, TopologyMap, createDeviceDispatchable } from 'iotes'
+import { createIotes, TopologyMap, createDeviceDispatchable } from '@iotes/core'
 import { mqttStrategy, DeviceTypes } from '../src'
 import { createTestMqttBroker, createTestClient } from './utils'
 
