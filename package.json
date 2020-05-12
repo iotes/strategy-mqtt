@@ -6,6 +6,9 @@
   "homepage": "https://iotes.dev",
   "main": "build/index.js",
   "private": false,
+  "publishConfig":{
+    "registry":"https://npm.pkg.github.com/"
+  },
   "scripts": {
     "build": "tsc",
     "test": "jest ./__tests__/*.test.ts --forceExit"
