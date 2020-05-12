@@ -100,5 +100,4 @@ export const mqttStrategy: Strategy<StrategyConfig, DeviceTypes> = ({
 }
 
 // Export types
-
 export { DeviceTypes, StrategyConfig }

@@ -5,9 +5,6 @@
   "repository": "git://github.com/iotes/strategy-mqtt.git",
   "homepage": "https://iotes.dev",
   "main": "build/index.js",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "scripts": {
     "build": "tsc",
     "test": "jest ./__tests__/*.test.ts --forceExit"
