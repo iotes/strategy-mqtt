@@ -6,7 +6,7 @@ import {
   Strategy,
   ClientConfig,
   createHostDispatchable,
-} from 'iotes'
+} from '@iotes/core'
 import { createDeviceFactory } from './deviceFactory'
 import { DeviceTypes, StrategyConfig } from './types'
 
