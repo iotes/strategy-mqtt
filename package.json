@@ -1,6 +1,6 @@
 {
   "name": "@iotes/strategy-mqtt",
-  "version": "0.0.11",
+  "version": "0.0.13",
   "description": "The iotes strategy for connecting to MQTT",
   "repository": "git://github.com/iotes/strategy-mqtt.git",
   "homepage": "https://iotes.dev",
