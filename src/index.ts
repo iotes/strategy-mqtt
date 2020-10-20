@@ -74,14 +74,13 @@ export const mqttStrategy: Strategy<StrategyConfig, DeviceTypes> = ({
 
   host.on('message', (topic: string, message: string) => {
     let mess: {[key: string]: any} = null
-    let stringMess: {[key: string]: any} = null
+    let stringMess: { [key: string]: any } = null
+
     try {
       mess = JSON.parse(message.toString())
     } catch {
       stringMess = { message: message.toString() }
     }
-
-    if (mess?.['@@iotes_storeId']) return
 
     const dispatchable = createDeviceDispatchable(topic, 'MQTT', mess || stringMess, hostConfig, 'MQTT_DEVICE')
     deviceDispatch(dispatchable)
