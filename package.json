@@ -24,7 +24,7 @@
     "@types/node": "^13.7.0",
     "@typescript-eslint/eslint-plugin": "^2.19.0",
     "@typescript-eslint/parser": "^2.19.0",
-    "aedes": "^0.40.1",
+    "aedes": "^0.42.1",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.20.1",
